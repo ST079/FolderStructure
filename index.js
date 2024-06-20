@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express();
+const indexRouter = require("./routes");
 
-app.get("/", (req, res) => {
-  res.json("Hello world");
-});
+app.use("/", indexRouter);
 
 app.listen(8000, () => {
   console.log("Application is running");
