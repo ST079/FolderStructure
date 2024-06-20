@@ -1,9 +1,12 @@
-const express = require("express");
-const router = express.Router();
+// const express = require("express");
+// const router = express.Router();
+const router = require("express").Router();
+const bookRouter = require("./book_route");
 
-// route 1
 router.get("/", (req, res) => {
-  res.json("Namesta World");
+  res.json({ msg: "Hello from index" });
 });
+
+router.use("/books", bookRouter);
 
 module.exports = router;
