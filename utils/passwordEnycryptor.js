@@ -7,3 +7,5 @@ const pswEncrypt = (string) => {
 const pswDecrypt = (string, hash) => {
   return bcrypt.compareSync(string, hash);
 };
+
+module.exports = { pswEncrypt, pswDecrypt };
