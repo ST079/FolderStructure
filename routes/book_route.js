@@ -15,7 +15,7 @@ router.get("/:id", (req, res, next) => {
     const { id } = req.params;
     const { name } = req.body;
     if (!id || !name) throw new Error("Id is missing");
-    res.json({ msg: `this is ${id}` });
+    res.json({ msg: `this is ${id} of ${name}` });
   } catch (err) {
     console.log(err);
     next(err);
