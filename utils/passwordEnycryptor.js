@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const pswEncrypt = (string) => {
   return bcrypt.hashSync(string, 10);

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const userRouter = require("./User_route");
+const userRouter = require("./user_route");
 const { numberFormat } = require("../utils/numberFormatter");
 
 router.get("/", (req, res) => {
