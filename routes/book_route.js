@@ -6,6 +6,22 @@ router.get("/", (req, res) => {
   res.json({ msg: "hello from book" });
 });
 
+router.get("/:id", (req, res, next) => {
+  //throw
+  //try catch => always go with this
+  // try catch finally
+
+  try {
+    const { id } = req.params;
+    const { name } = req.body;
+    if (!id || !name) throw new Error("Id is missing");
+    res.json({ msg: `this is ${id}` });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+});
+
 router.post("/:number", (req, res) => {
   //req.params => /:id => req.params.id // details
   //req.query => ?key:value //paginations
