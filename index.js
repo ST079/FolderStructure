@@ -5,6 +5,7 @@ const errorMiddleware = require("./middlewares/error_middleware");
 
 //to enable post put, delete, patch methods cause by default yo activate hunna
 app.use(express.json());
+app.use(express.static("public"));
 
 //global middleware
 app.use((req, res, next) => {

@@ -27,7 +27,7 @@ router.get("/admin", checkRoles("[admin]"), (req, res, next) => {
 
 router.post("/password", checkRoles("[user]"), encryptPsw, (req, res, next) => {
   try {
-    encryptPsw;
+    res.json({ pw: req.body.password });
   } catch (err) {
     next(err);
   }
